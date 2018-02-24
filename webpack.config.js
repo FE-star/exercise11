@@ -22,10 +22,10 @@ const config = {
     rules: [
     	{ 
     		test: /\.css$/, 
-    		use: ExtractTextPlugin.extract({
+    		use: TARGET != 'dev' ? ExtractTextPlugin.extract({
 				fallback: "style-loader",
 				use: "css-loader"
-	        }) 
+	        }) : ['style-loader','css-loader']
     	}
     ]
   },
