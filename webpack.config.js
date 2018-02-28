@@ -7,7 +7,7 @@ var TARGET = process.env.npm_lifecycle_event
 var APP_PATH = path.join(__dirname, '/src')
 
 module.exports = {
-  entry: './src/index',
+  entry: APP_PATH,
   output: {
     path: path.resolve(__dirname, 'dist'), // string
     filename: 'main.js'
