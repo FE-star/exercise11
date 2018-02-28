@@ -16,10 +16,20 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: "css-loader"
-        })
+        use: TARGET === 'build'
+          ? ExtractTextPlugin.extract({
+              fallback: "style-loader",
+              use: "css-loader"
+            })
+          : [
+              {
+                loader: "style-loader"
+              },
+              {
+                loader: "css-loader"
+              }
+            ]
+
       }
     ]
   },
