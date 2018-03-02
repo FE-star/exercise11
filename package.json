@@ -4,7 +4,8 @@
   "description": "exercise",
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "webpack"
+    "dev": "webpack",
+    "build": "webpack -p"
   },
   "repository": {
     "type": "git",
