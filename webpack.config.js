@@ -31,7 +31,7 @@ module.exports = {
       filename: 'main.css',
     }),
     new webpack.optimize.UglifyJsPlugin({
-      
+      warnings: false
     })
   ]
 }
