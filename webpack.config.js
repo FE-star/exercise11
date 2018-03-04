@@ -28,7 +28,7 @@ module.exports = function getConfig(){
                     use: [
                         'css-loader'
                     ]
-                }) : 'css-loader'
+                }) : ['style-loader', 'css-loader']
             }
         ]
     }
