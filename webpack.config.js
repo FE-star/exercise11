@@ -30,5 +30,8 @@ module.exports = {
     new ExtractTextPlugin({
       filename: 'main.css',
     }),
+    new webpack.optimize.UglifyJsPlugin({
+      
+    })
   ]
 }
