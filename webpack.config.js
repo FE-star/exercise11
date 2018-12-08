@@ -1,5 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
+const merge = require('webpack-merge')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
@@ -13,17 +14,9 @@ const commonConfig = {
     filename: 'main.js',
     path: path.resolve(__dirname,'dist')
   },
-  module: {
-    rules: [
-      {
-        test:/\.css$/,
-        use:[
-          'style-loader',
-          'css-loader'
-        ]
-      }
-    ]
-  }
+  plugins:[
+    new CleanWebpackPlugin(['dist'])
+  ]
 }
 
 const buildConfig = {
@@ -39,17 +32,24 @@ const buildConfig = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
     new ExtractTextPlugin("main.css")
   ]
 }
 
 const devConfig = {
-  plugins:[
-    new CleanWebpackPlugin(['dist'])
-  ]
+  module: {
+    rules: [
+      {
+        test:/\.css$/,
+        use:[
+          'style-loader',
+          'css-loader'
+        ]
+      }
+    ]
+  }
 }
 
 
 
-module.exports = Object.assign(commonConfig, TARGET === 'build'? buildConfig : devConfig);
+module.exports = merge(commonConfig, TARGET === 'build'? buildConfig : devConfig);
