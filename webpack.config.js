@@ -46,4 +46,4 @@ const buildConfig = {
     ]
 }
 
-module.exports = (TARGET === 'build') ? Object.assign(webpackConfig, buildConfig) : webpackConfig
+module.exports = (TARGET === 'build') ? Object.assign(webpackConfig, buildConfig) : webpackConfig;
