@@ -4,7 +4,8 @@
   "description": "exercise",
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "webpack"
+    "build": "npm_lifecycle_event=production webpack",
+    "dev": "npm_lifecycle_event=development webpack"
   },
   "repository": {
     "type": "git",
