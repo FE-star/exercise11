@@ -7,7 +7,6 @@ var TARGET = process.env.npm_lifecycle_event
 var APP_PATH = path.join(__dirname, '/src')
 
 
-
 module.exports = {
     entry: APP_PATH,
     output: {
@@ -17,20 +16,18 @@ module.exports = {
     module: {
         rules: [{
             test: /\.css$/,
-            use: ExtractTextPlugin.extract({
-                use: "css-loader"
-            })
+            use: ['style-loader','css-loader'],
         }]
     },
-    plugins: [
-		new ExtractTextPlugin({
-			filename: "style.css",
-			allChunks: true
-        }),
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-              warnings: false
-            }
-        })
-	]
+    // plugins: [
+	// 	new ExtractTextPlugin({
+	// 		filename: "style.css",
+	// 		allChunks: true
+    //     }),
+    //     new webpack.optimize.UglifyJsPlugin({
+    //         compress: {
+    //           warnings: false
+    //         }
+    //     })
+	// ]
 }
