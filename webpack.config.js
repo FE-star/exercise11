@@ -41,7 +41,8 @@ var buildConfig = {
     plugins: [
         new ExtractTextPlugin({
             filename: 'style.css'
-        })
+        }),
+        new webpack.optimize.UglifyJsPlugin()
     ]
 };
 
