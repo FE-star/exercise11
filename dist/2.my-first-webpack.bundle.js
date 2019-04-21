@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[2],{2:function(e,d){var n=document.createElement("div"),o=document.createTextNode("Hi there! I'm module A!");n.appendChild(o),document.body.appendChild(n)}}]);

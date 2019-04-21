@@ -1,3 +1,3 @@
-require('./style.css')
-require('./moduleA.js')
-require('./moduleB.js')
+import('./style.css')
+import('./moduleA.js')
+import('./moduleB.js')
